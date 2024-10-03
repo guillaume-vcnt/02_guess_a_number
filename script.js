@@ -32,6 +32,7 @@
 
 // gamePlay();
 
+
 const playerNumber1 = document.querySelector("#choose-a-number");
 
 const startButton = document.querySelector("#start-button");
@@ -41,16 +42,14 @@ startButton.addEventListener("click", function () {
     return saveValuePlayer1
 });
 
-
 const playerNumber2 = document.querySelector("#find-the-good-number");
 
-playerNumber2.addEventListener("click", function () {
-  let valuePlayerNumber2 = playerNumber2.value;
-  console.log("🥈", valuePlayerNumber2);
+const tryButton = document.querySelector("#try-button");
+tryButton.addEventListener("click", function () {
+    let saveValuePlayer2 = playerNumber2.value;
+    console.log("🥈", saveValuePlayer2);
+    return saveValuePlayer2
 });
-
-const tryButton = document.querySelector("#start-button");
-tryButton.addEventListener("click", function () {});
 
 
 function choosingNumber() {}
