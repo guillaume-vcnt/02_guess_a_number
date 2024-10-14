@@ -32,32 +32,74 @@
 
 // gamePlay();
 
+let playerAttempt = 0;
+let saveValuePlayer1;
+let saveValuePlayer2;
 
 const playerNumber1 = document.querySelector("#choose-a-number");
-
 const startButton = document.querySelector("#start-button");
+
 startButton.addEventListener("click", function () {
-    let saveValuePlayer1 = playerNumber1.value;
-    console.log("🥇", saveValuePlayer1)
-    return saveValuePlayer1
+  saveValuePlayer1 = parseInt(playerNumber1.value);
+  console.log("🥇", saveValuePlayer1);
 });
 
 const playerNumber2 = document.querySelector("#find-the-good-number");
-
 const tryButton = document.querySelector("#try-button");
+
 tryButton.addEventListener("click", function () {
-    let saveValuePlayer2 = playerNumber2.value;
-    console.log("🥈", saveValuePlayer2);
-    return saveValuePlayer2
+  let saveValuePlayer2 = parseInt(playerNumber2.value);
+  console.log("🥈", saveValuePlayer2);
+  matchNumber(saveValuePlayer1, saveValuePlayer2);
 });
 
+function matchNumber(nbP1, nbP2) {
+  console.log(typeof nbP1, typeof nbP2);
+  if (nbP1 > nbP2) {
+    console.log("Plus Grand !");
+    grandMessage();
+    wrongNumber();
+  } else if (nbP1 < nbP2) {
+    console.log("Plus Petit !");
+    petitMessage();
+    wrongNumber();
+  } else {
+    console.log("Bravo !");
+    bravoMessage();
+  }
+}
 
-function choosingNumber() {}
+function wrongNumber() {
+  playerAttempt = playerAttempt + 1;
+  console.log(`"💋 " ${playerAttempt}`);
+  let newDivMessage1 = document.createElement("p");
+  newDivMessage1.setAttribute("id", "attempts-message");
+  newDivMessage1.textContent = `Tentative ${playerAttempt}`;
+  document.body.appendChild(newDivMessage1);
+}
 
-function findingNumber() {}
+function bravoMessage() {
+  let newDivMessage2 = document.createElement("p");
+  newDivMessage2.setAttribute("id", "alert-message");
+  newDivMessage2.textContent = "Bravo !";
+  document.body.appendChild(newDivMessage2);
+}
 
-function matchNumber() {}
+function grandMessage() {
+  let valueGrandMessage = document.querySelector("#grand-message")
+  if (valueGrandMessage)
+    { valueGrandMessage.remove()
+  console.log("👽 ok", valueGrandMessage)
+};
+  let newDivMessagegGrand = document.createElement("p");
+  newDivMessagegGrand.setAttribute("id", "grand-message");
+  newDivMessagegGrand.textContent = "Plus Grand !";
+  document.body.appendChild(newDivMessagegGrand);
+  }
 
-function GameMessage() {}
-
-function gamePlay() {}
+function petitMessage() {
+  let newDivMessagegPetit = document.createElement("p");
+  newDivMessagegPetit.setAttribute("id", "petit-message");
+  newDivMessagegPetit.textContent = "Plus Petit !";
+  document.body.appendChild(newDivMessagegPetit);
+}
