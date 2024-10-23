@@ -1,105 +1,54 @@
-// //02_guess_a_number
-
-// function didIWin(number) {
-//   if (parseInt(number) < 22) {
-//     alert("Plus grand !");
-//     return false;
-//   } else if (parseInt(number) > 22) {
-//     alert("Plus petit !");
-//     return false;
-//   } else if (parseInt(number) === 22) {
-//     alert("Bravo !");21
-//     return true;
-//   } else {
-//     return false;
-//   }
-// }
-
-// function gamePlay() {
-//   const givenNumber = prompt("Choose a number");
-//   console.log(givenNumber);
-//   const result = didIWin(givenNumber);
-
-//   // Note : Un paramètre Javascript ne fait que stocker la valeur qui lui est passée au moment de l'appel d'une fonction. Il ne garde pas d'information au-delà de cette exécution, à moins qu'il ne stocke cette valeur ailleurs, par exemple dans une variable globale, un objet, ou une base de données.
-
-//   if (result !== true) {
-
-//   // Autre écriture : if (!result)
-
-//     gamePlay();
-//   }
-// }
-
-// gamePlay();
-
-let playerAttempt = 0;
-let saveValuePlayer1;
-let saveValuePlayer2;
-
-const playerNumber1 = document.querySelector("#choose-a-number");
-const startButton = document.querySelector("#start-button");
+findingContainer.style.display = "none";
 
 startButton.addEventListener("click", function () {
   saveValuePlayer1 = parseInt(playerNumber1.value);
   console.log("🥇", saveValuePlayer1);
+  if (
+    saveValuePlayer1 < 1 ||
+    saveValuePlayer1 > 50 ||
+    isNaN(saveValuePlayer1)
+  ) {
+    let newDivAlert1IsOn = document.querySelector("#alert-message1");
+    if (newDivAlert1IsOn !== null) newDivAlert1IsOn.remove();
+    let newDivAlert1 = document.createElement("p");
+    newDivAlert1.setAttribute("id", "alert-message1");
+    newDivAlert1.textContent = "Choose a valid number !";
+    newDivAlert1.style.color = "red";
+    newDivAlert1.style.alignSelf = "center";
+    newDivAlert1.style.textTransform = "uppercase";
+    mainContainer.appendChild(newDivAlert1);
+  } else {
+    let newDivAlert1IsOn = document.querySelector("#alert-message1");
+    if (newDivAlert1IsOn !== null) newDivAlert1IsOn.remove();
+    choosingContainer.style.display = "none";
+    findingContainer.style.display = "flex";
+  }
 });
-
-const playerNumber2 = document.querySelector("#find-the-good-number");
-const tryButton = document.querySelector("#try-button");
 
 tryButton.addEventListener("click", function () {
   let saveValuePlayer2 = parseInt(playerNumber2.value);
   console.log("🥈", saveValuePlayer2);
-  matchNumber(saveValuePlayer1, saveValuePlayer2);
+  if (
+    saveValuePlayer2 < 1 ||
+    saveValuePlayer2 > 50 ||
+    isNaN(saveValuePlayer2)
+  ) {
+    let newDivAlert2IsOn = document.querySelector("#alert-message2");
+    if (newDivAlert2IsOn !== null) newDivAlert2IsOn.remove();
+    let newDivAlert2 = document.createElement("p");
+    newDivAlert2.setAttribute("id", "alert-message2");
+    newDivAlert2.textContent = "Choose a valid number !";
+    newDivAlert2.style.color = "red";
+    newDivAlert2.style.alignSelf = "center";
+    newDivAlert2.style.textTransform = "uppercase";
+    mainContainer.appendChild(newDivAlert2);
+  } else {
+    let newDivAlert2IsOn = document.querySelector("#alert-message2");
+    if (newDivAlert2IsOn !== null) newDivAlert2IsOn.remove();
+    matchNumber(saveValuePlayer1, saveValuePlayer2);
+  }
 });
 
-function matchNumber(nbP1, nbP2) {
-  console.log(typeof nbP1, typeof nbP2);
-  if (nbP1 > nbP2) {
-    console.log("Plus Grand !");
-    grandMessage();
-    wrongNumber();
-  } else if (nbP1 < nbP2) {
-    console.log("Plus Petit !");
-    petitMessage();
-    wrongNumber();
-  } else {
-    console.log("Bravo !");
-    bravoMessage();
-  }
-}
+// Note : Un paramètre Javascript ne fait que stocker la valeur qui lui est passée au moment de l'appel d'une fonction. Il ne garde pas d'information au-delà de cette exécution, à moins qu'il ne stocke cette valeur ailleurs, par exemple dans une variable globale, un objet, ou une base de données.
 
-function wrongNumber() {
-  playerAttempt = playerAttempt + 1;
-  console.log(`"💋 " ${playerAttempt}`);
-  let newDivMessage1 = document.createElement("p");
-  newDivMessage1.setAttribute("id", "attempts-message");
-  newDivMessage1.textContent = `Tentative ${playerAttempt}`;
-  document.body.appendChild(newDivMessage1);
-}
-
-function bravoMessage() {
-  let newDivMessage2 = document.createElement("p");
-  newDivMessage2.setAttribute("id", "alert-message");
-  newDivMessage2.textContent = "Bravo !";
-  document.body.appendChild(newDivMessage2);
-}
-
-function grandMessage() {
-  let valueGrandMessage = document.querySelector("#grand-message")
-  if (valueGrandMessage)
-    { valueGrandMessage.remove()
-  console.log("👽 ok", valueGrandMessage)
-};
-  let newDivMessagegGrand = document.createElement("p");
-  newDivMessagegGrand.setAttribute("id", "grand-message");
-  newDivMessagegGrand.textContent = "Plus Grand !";
-  document.body.appendChild(newDivMessagegGrand);
-  }
-
-function petitMessage() {
-  let newDivMessagegPetit = document.createElement("p");
-  newDivMessagegPetit.setAttribute("id", "petit-message");
-  newDivMessagegPetit.textContent = "Plus Petit !";
-  document.body.appendChild(newDivMessagegPetit);
-}
+//Note : La fonction isNaN() peut être utilisée pour vérifier si une valeur est un "Not-a-Number" (NaN), ce qui inclut les cas où l'input est vide. En JavaScript, lorsqu'un champ de saisie (input) est vide, il est traité comme une chaîne vide "", qui, lorsqu'elle est convertie en nombre avec parseInt(), donne NaN.

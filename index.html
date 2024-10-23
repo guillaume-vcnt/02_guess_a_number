@@ -1,26 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>02_guess_a_number</title>
-    <script src = "script.js" defer></script>
-</head>
-<body>
-    
-<h1> Guess a Number</h1>
+    <script src="global.js" defer></script>
+    <script src="function.js" defer></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="main-container">
 
-<p>Choose a number between 0 to 50</p>
-<input type="number" name="choose-a-number" min="0" max="50" id="choose-a-number" placeholder="Player 1">
+      <h1>Guess a Number</h1>
 
-<button id="start-button">START</button>
+      <div id="choosing-container">
+        <label for="choose-a-number">Choose a number between 0 to 50</label>
+        <input
+          type="number"
+          name="choose-a-number"
+          id="choose-a-number"
+          min="0"
+          max="50"
+          placeholder="Player 1"
+          required
+        />
+        <button id="start-button" type="submit">START</button>
+      </div>
 
-<br>
-
-<p>Find the good number between 0 to 50</p>
-<input type="number" name="find-the-good-number" id="find-the-good-number" min="0" max="50" placeholder="Player 2">
-
-<button id="try-button">TRY</button>
-
-</body>
+      <div id="finding-container">
+        <label for="choose-a-number">Try a number between 0 to 50</label>
+        <input
+          type="number"
+          name="find-the-good-number"
+          id="find-the-good-number"
+          min="0"
+          max="50"
+          placeholder="Player 2"
+          required
+        />
+        <button id="try-button" type="submit">TRY</button>  
+      </div>
+      
+    </div>
+  </body>
 </html>
