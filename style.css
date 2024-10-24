@@ -24,14 +24,14 @@ h1 {
   width: 25rem;
 }
 
-#choosing-container {
+#player1-container {
   display: flex;
   align-self: center;
   flex-direction: column;
   margin-bottom: 1.5rem;
 }
 
-#finding-container {
+#player2-container {
   display: flex;
   align-self: center;
   flex-direction: column;

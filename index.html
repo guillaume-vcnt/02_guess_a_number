@@ -11,10 +11,9 @@
   </head>
   <body>
     <div id="main-container">
-
       <h1>Guess a Number</h1>
 
-      <div id="choosing-container">
+      <div id="player1-container">
         <label for="choose-a-number">Choose a number between 0 to 50</label>
         <input
           type="number"
@@ -28,20 +27,19 @@
         <button id="start-button" type="submit">START</button>
       </div>
 
-      <div id="finding-container">
-        <label for="choose-a-number">Try a number between 0 to 50</label>
+      <div id="player2-container">
+        <label for="try-a-number">Try a number between 0 to 50</label>
         <input
           type="number"
-          name="find-the-good-number"
-          id="find-the-good-number"
+          name="try-a-number"
+          id="try-a-number"
           min="0"
           max="50"
           placeholder="Player 2"
           required
         />
-        <button id="try-button" type="submit">TRY</button>  
+        <button id="try-button" type="submit">TRY</button>
       </div>
-      
     </div>
   </body>
 </html>

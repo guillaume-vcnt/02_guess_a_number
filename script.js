@@ -1,51 +1,43 @@
-findingContainer.style.display = "none";
+player2Container.style.display = "none";
 
 startButton.addEventListener("click", function () {
-  saveValuePlayer1 = parseInt(playerNumber1.value);
-  console.log("🥇", saveValuePlayer1);
-  if (
-    saveValuePlayer1 < 1 ||
-    saveValuePlayer1 > 50 ||
-    isNaN(saveValuePlayer1)
-  ) {
-    let newDivAlert1IsOn = document.querySelector("#alert-message1");
-    if (newDivAlert1IsOn !== null) newDivAlert1IsOn.remove();
-    let newDivAlert1 = document.createElement("p");
-    newDivAlert1.setAttribute("id", "alert-message1");
-    newDivAlert1.textContent = "Choose a valid number !";
-    newDivAlert1.style.color = "red";
-    newDivAlert1.style.alignSelf = "center";
-    newDivAlert1.style.textTransform = "uppercase";
-    mainContainer.appendChild(newDivAlert1);
+  valuePlayer1 = parseInt(player1.value);
+  console.log("🥇", valuePlayer1);
+  if (valuePlayer1 < 1 || valuePlayer1 > 50 || isNaN(valuePlayer1)) {
+    let alertIsOn = document.querySelector("#alert-message");
+    if (alertIsOn !== null) alertIsOn.remove();
+    let newElmAlert = document.createElement("p");
+    newElmAlert.setAttribute("id", "alert-message");
+    newElmAlert.textContent = "Choose a valid number !";
+    newElmAlert.style.color = "red";
+    newElmAlert.style.alignSelf = "center";
+    newElmAlert.style.textTransform = "uppercase";
+    mainContainer.appendChild(newElmAlert);
   } else {
-    let newDivAlert1IsOn = document.querySelector("#alert-message1");
-    if (newDivAlert1IsOn !== null) newDivAlert1IsOn.remove();
-    choosingContainer.style.display = "none";
-    findingContainer.style.display = "flex";
+    let alertIsOn = document.querySelector("#alert-message");
+    if (alertIsOn !== null) alertIsOn.remove();
+    player1Container.style.display = "none";
+    player2Container.style.display = "flex";
   }
 });
 
 tryButton.addEventListener("click", function () {
-  let saveValuePlayer2 = parseInt(playerNumber2.value);
-  console.log("🥈", saveValuePlayer2);
-  if (
-    saveValuePlayer2 < 1 ||
-    saveValuePlayer2 > 50 ||
-    isNaN(saveValuePlayer2)
-  ) {
-    let newDivAlert2IsOn = document.querySelector("#alert-message2");
-    if (newDivAlert2IsOn !== null) newDivAlert2IsOn.remove();
-    let newDivAlert2 = document.createElement("p");
-    newDivAlert2.setAttribute("id", "alert-message2");
-    newDivAlert2.textContent = "Choose a valid number !";
-    newDivAlert2.style.color = "red";
-    newDivAlert2.style.alignSelf = "center";
-    newDivAlert2.style.textTransform = "uppercase";
-    mainContainer.appendChild(newDivAlert2);
+  let valuePlayer2 = parseInt(player2.value);
+  console.log("🥈", valuePlayer2);
+  if (valuePlayer2 < 1 || valuePlayer2 > 50 || isNaN(valuePlayer2)) {
+    let alertIsOn = document.querySelector("#alert-message");
+    if (alertIsOn !== null) alertIsOn.remove();
+    let newElmAlert = document.createElement("p");
+    newElmAlert.setAttribute("id", "alert-message");
+    newElmAlert.textContent = "Choose a valid number !";
+    newElmAlert.style.color = "red";
+    newElmAlert.style.alignSelf = "center";
+    newElmAlert.style.textTransform = "uppercase";
+    mainContainer.appendChild(newElmAlert);
   } else {
-    let newDivAlert2IsOn = document.querySelector("#alert-message2");
-    if (newDivAlert2IsOn !== null) newDivAlert2IsOn.remove();
-    matchNumber(saveValuePlayer1, saveValuePlayer2);
+    let alertIsOn = document.querySelector("#alert-message");
+    if (alertIsOn !== null) alertIsOn.remove();
+    matchNumber(valuePlayer1, valuePlayer2);
   }
 });
 

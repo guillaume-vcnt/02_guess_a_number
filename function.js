@@ -1,93 +1,92 @@
-function matchNumber(nbP1, nbP2) {
-  console.log(typeof nbP1, typeof nbP2);
-  if (nbP1 > nbP2) {
-    console.log("Bigger !");
-    grandMessage();
+function matchNumber(p1, p2) {
+  console.log(typeof p1, typeof p2);
+  if (p1 > p2) {
+    console.log("👹 Bigger !");
+    biggerMessage();
     wrongNumber();
-  } else if (nbP1 < nbP2) {
-    console.log("Smaller!");
-    petitMessage();
+  } else if (p1 < p2) {
+    console.log("👹 Smaller!");
+    smallerMessage();
     wrongNumber();
   } else {
-    console.log("Well done !");
-    bravoMessage();
+    console.log("👹 Well done !");
+    wellDoneMessage();
   }
 }
 
 function wrongNumber() {
-  let attemptsMessageIsOn = document.querySelector("#attempts-message");
-  if (attemptsMessageIsOn !== null) {
-    attemptsMessageIsOn.remove();
-    console.log("👽 On", attemptsMessageIsOn);
+  let attemptIsOn = document.querySelector("#attempt-message");
+  if (attemptIsOn !== null) {
+    attemptIsOn.remove();
   }
   playerAttempt = playerAttempt + 1;
-  console.log(`"💋 " ${playerAttempt}`);
-  let newDivMessage1 = document.createElement("p");
-  newDivMessage1.setAttribute("id", "attempts-message");
-  newDivMessage1.textContent = `Attempt ${playerAttempt}`;
-  newDivMessage1.style.color = "orange";
-  newDivMessage1.style.alignSelf = "center";
-  newDivMessage1.style.textTransform = "uppercase";
-  mainContainer.appendChild(newDivMessage1);
+  console.log(`"👻 " ${playerAttempt}`);
+  let newElmAttempt = document.createElement("p");
+  newElmAttempt.setAttribute("id", "attempt-message");
+  newElmAttempt.textContent = `Attempt ${playerAttempt}`;
+  newElmAttempt.style.textTransform = "uppercase";
+  newElmAttempt.style.color = "orange";
+  newElmAttempt.style.alignSelf = "center";
+  mainContainer.appendChild(newElmAttempt);
 }
 
-function bravoMessage() {
-  let petitMessageIsOn = document.querySelector("#petit-message");
-  if (petitMessageIsOn !== null) petitMessageIsOn.remove();
-  let grandMessageIsOn = document.querySelector("#grand-message");
-  if (grandMessageIsOn !== null) grandMessageIsOn.remove();
-  let attemptsMessageIsOn = document.querySelector("#attempts-message");
-  if (attemptsMessageIsOn !== null) attemptsMessageIsOn.remove();
-  let newDivMessage2 = document.createElement("p");
-  newDivMessage2.setAttribute("id", "bravo-message");
-  newDivMessage2.textContent = "Well done !";
-  newDivMessage2.style.color = "green";
-  newDivMessage2.style.alignSelf = "center";
-  newDivMessage2.style.textTransform = "uppercase";
-  newDivMessage2.style.fontSize = "25px";
-  mainContainer.appendChild(newDivMessage2);
-  findingContainer.style.display = "none";
-  let restartGame = document.createElement("button");
-  restartGame.setAttribute("id", "restart-button");
-  restartGame.setAttribute("onclick", "restartGame()");
-  restartGame.innerText = "Restart Game";
-  restartGame.style.alignSelf = "center";
-  restartGame.style.height = "25px";
-  restartGame.style.width = "100px";
-  restartGame.style.marginTop = "1.5rem";
-  mainContainer.appendChild(restartGame);
+function wellDoneMessage() {
+  let smallerIsOn = document.querySelector("#smaller-message");
+  if (smallerIsOn !== null) smallerIsOn.remove();
+  let biggerIsOn = document.querySelector("#bigger-message");
+  if (biggerIsOn !== null) biggerIsOn.remove();
+  let attemptIsOn = document.querySelector("#attempt-message");
+  if (attemptIsOn !== null) attemptIsOn.remove();
+  let newElmWellDone = document.createElement("p");
+  newElmWellDone.setAttribute("id", "wellDone-message");
+  newElmWellDone.textContent = "Well done !";
+  newElmWellDone.style.textTransform = "uppercase";
+  newElmWellDone.style.fontSize = "25px";
+  newElmWellDone.style.color = "green";
+  newElmWellDone.style.alignSelf = "center";
+  mainContainer.appendChild(newElmWellDone);
+  player2Container.style.display = "none";
+  let newElmRestartGame = document.createElement("button");
+  newElmRestartGame.setAttribute("id", "restart-button");
+  newElmRestartGame.setAttribute("onclick", "restartGame()");
+  newElmRestartGame.innerText = "Restart Game";
+  newElmRestartGame.style.height = "25px";
+  newElmRestartGame.style.width = "100px";
+  newElmRestartGame.style.marginTop = "1.5rem";
+  newElmRestartGame.style.alignSelf = "center";
+  mainContainer.appendChild(newElmRestartGame);
 }
 
-function grandMessage() {
-  let petitMessageIsOn = document.querySelector("#petit-message");
-  if (petitMessageIsOn !== null) petitMessageIsOn.remove();
-  let grandMessageIsOn = document.querySelector("#grand-message");
-  if (grandMessageIsOn !== null) {
-    grandMessageIsOn.remove();
-    console.log("👽 On", grandMessageIsOn);
+function biggerMessage() {
+  let smallerIsOn = document.querySelector("#smaller-message");
+  if (smallerIsOn !== null) smallerIsOn.remove();
+  let biggerIsOn = document.querySelector("#bigger-message");
+  if (biggerIsOn !== null) {
+    biggerIsOn.remove();
+    console.log("👽", biggerIsOn);
   }
-  let newDivMessageGrand = document.createElement("p");
-  newDivMessageGrand.setAttribute("id", "grand-message");
-  newDivMessageGrand.textContent = "Bigger !";
-  newDivMessageGrand.style.alignSelf = "center";
-  newDivMessageGrand.style.textTransform = "uppercase";
-  mainContainer.appendChild(newDivMessageGrand);
+  let newElmBigger = document.createElement("p");
+  newElmBigger.setAttribute("id", "bigger-message");
+  newElmBigger.textContent = "Bigger !";
+  newElmBigger.style.textTransform = "uppercase";
+  newElmBigger.style.alignSelf = "center";
+  mainContainer.appendChild(newElmBigger);
 }
 
-function petitMessage() {
-  let grandMessageIsOn = document.querySelector("#grand-message");
-  if (grandMessageIsOn !== null) grandMessageIsOn.remove();
-  let petitMessageIsOn = document.querySelector("#petit-message");
-  if (petitMessageIsOn !== null) {
-    petitMessageIsOn.remove();
-    console.log("👽 On", petitMessageIsOn);
+function smallerMessage() {
+  let biggerIsOn = document.querySelector("#bigger-message");
+  if (biggerIsOn !== null) biggerIsOn.remove();
+  let smallerIsOn = document.querySelector("#smaller-message");
+  if (smallerIsOn !== null) {
+    smallerIsOn.remove();
+    console.log("👽", smallerIsOn);
   }
-  let newDivMessagePetit = document.createElement("p");
-  newDivMessagePetit.setAttribute("id", "petit-message");
-  newDivMessagePetit.textContent = "Smaller !";
-  newDivMessagePetit.style.alignSelf = "center";
-  newDivMessagePetit.style.textTransform = "uppercase";
-  mainContainer.appendChild(newDivMessagePetit);
+  let newElmSmaller = document.createElement("p");
+  newElmSmaller.setAttribute("id", "smaller-message");
+  newElmSmaller.textContent = "Smaller !";
+  newElmSmaller.style.textTransform = "uppercase";
+  newElmSmaller.style.alignSelf = "center";
+  mainContainer.appendChild(newElmSmaller);
 }
 
 function restartGame() {
