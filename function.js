@@ -19,8 +19,10 @@ function wrongNumber() {
   if (attemptIsOn !== null) {
     attemptIsOn.remove();
   }
+
   playerAttempt = playerAttempt + 1;
   console.log(`"👻 " ${playerAttempt}`);
+  
   let newElmAttempt = document.createElement("p");
   newElmAttempt.setAttribute("id", "attempt-message");
   newElmAttempt.textContent = `Attempt ${playerAttempt}`;

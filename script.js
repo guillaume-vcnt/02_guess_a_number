@@ -41,6 +41,7 @@ tryButton.addEventListener("click", function () {
   }
 });
 
+
 // Note : Un paramètre Javascript ne fait que stocker la valeur qui lui est passée au moment de l'appel d'une fonction. Il ne garde pas d'information au-delà de cette exécution, à moins qu'il ne stocke cette valeur ailleurs, par exemple dans une variable globale, un objet, ou une base de données.
 
 //Note : La fonction isNaN() peut être utilisée pour vérifier si une valeur est un "Not-a-Number" (NaN), ce qui inclut les cas où l'input est vide. En JavaScript, lorsqu'un champ de saisie (input) est vide, il est traité comme une chaîne vide "", qui, lorsqu'elle est convertie en nombre avec parseInt(), donne NaN.
