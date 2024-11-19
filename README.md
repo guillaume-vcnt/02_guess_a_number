@@ -20,7 +20,7 @@ Responsivité : oui
 
 UI/UX : Non
 
-IDE : VsCode
+IDE : VSCode
 
 OS : Windows
 
