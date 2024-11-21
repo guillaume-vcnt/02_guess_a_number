@@ -12,7 +12,7 @@ Ce projet met en avant la manipulation du DOM avec JavaScript.
 
 Nombre de participants : 1 
 
-Technologies : JavaScript, HTLM, CSS
+Technologies : JavaScript, HTML, CSS
 
 Refactorisation : Non
 
