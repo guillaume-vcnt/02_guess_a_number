@@ -26,4 +26,4 @@ OS : Windows
 
 ## Utilisation 
 
-S'exécute via Live Server
+S'exécute via https://guillaume-vcnt.github.io/02_guess_a_number
