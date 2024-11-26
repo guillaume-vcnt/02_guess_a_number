@@ -18,8 +18,6 @@ Refactorisation : Non
 
 Responsivité : oui
 
-UI/UX : Non
-
 IDE : VSCode
 
 OS : Windows
