@@ -1,4 +1,4 @@
-02_guess_a_number
+Guess A Number
 
 ## À propos 
 Cet exercice individuel a pour but de faire un petit jeu interactif où deux joueurs peuvent s'affronter. 
@@ -17,6 +17,8 @@ Technologies : JavaScript, HTML, CSS
 Refactorisation : Non
 
 Responsivité : oui
+
+UX/UI : Non
 
 IDE : VSCode
 
