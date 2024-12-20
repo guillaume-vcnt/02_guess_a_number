@@ -25,4 +25,4 @@ OS : Windows
 
 ## Utilisation
 
-S'exécute via https://guillaume-vcnt.github.io/02_guess_a_number
+S'exécute via https://guillaume-vcnt.github.io/01_guess_a_number
