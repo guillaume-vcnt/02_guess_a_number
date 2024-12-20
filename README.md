@@ -17,7 +17,7 @@ Technologies : JavaScript, HTML, CSS
 
 Refactorisation : Non
 
-Responsivité : Oui
+Responsive : Oui
 
 IDE : VSCode
 
