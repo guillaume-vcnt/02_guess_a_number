@@ -1,6 +1,7 @@
-02_guess_a_number
+Guess A Number
 
-## À propos 
+## À propos
+
 Cet exercice individuel a pour but de faire un petit jeu interactif où deux joueurs peuvent s'affronter. 
 Le premier joueur choisit un nombre secret, et le second essaie de le deviner. 
 Une fois le bon nombre trouvé, un message s'affiche pour célébrer la victoire. 
@@ -22,6 +23,6 @@ IDE : VSCode
 
 OS : Windows
 
-## Utilisation 
+## Utilisation
 
 S'exécute via https://guillaume-vcnt.github.io/02_guess_a_number
